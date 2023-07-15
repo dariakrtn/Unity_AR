@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
@@ -28,6 +29,7 @@ public class PlaceOnPlane : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+
         if (Input.touchCount>0)
         {
             touchPosition = Input.GetTouch(0).position;
@@ -39,6 +41,7 @@ public class PlaceOnPlane : MonoBehaviour
                 ScenePrefab.SetActive(true);
                 ScenePrefab.transform.position = hitPose.position;
                 LookAtPlayer(ScenePrefab.transform);
+
             }
         }
     }
